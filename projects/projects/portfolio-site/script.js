@@ -1,21 +1,3 @@
-const projects = [
-    {
-        title: "Storage Business Website",
-        description: "Concept project focused on pricing layout and service clarity.",
-        tag: "Concept Project",
-    },
-    {
-        title: "Food Truck Court Website",
-        description: "Practice landing page emphasizing navigation and content structure.",
-        tag: "Concept Project",
-    },
-    {
-        title: "Cleaning Service Website",
-        description: "Practice project focused on trust, services, and layout clarity.",
-        tag: "Practice Project",
-    },
-];
-
 const skills = [
     {
         category: "Web Development",
