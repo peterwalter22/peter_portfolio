@@ -181,3 +181,25 @@ nav a {
   .hero { height: 65vh; }
   .btn { width: 100%; margin-top: .5rem; }
 }
+
+/* ===== MOBILE MENU SCROLL FIX ===== */
+@media (max-width: 768px) {
+
+  .menu-scroll-container {
+    max-height: 70vh;          /* menu takes most of screen */
+    overflow-y: auto;          /* scroll INSIDE menu */
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+  }
+
+  /* Prevent page scroll when menu is active */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Make expanded menu items scrollable */
+  .menu-items.active {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+}
