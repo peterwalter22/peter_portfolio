@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Peter | Web Design/Database Analystic Student</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Student portfolio showcasing web development projects, skills, and learning progress." />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="brand">
+                <span class="brand-mark">P</span>
+                <span class="brand-text">Peter Portfolio</span>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <button id="themeToggle" aria-label="Toggle dark mode">
+        </button>
+
+    </header>
+
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <p class="eyebrow">Web Design & Development Student/Database Analystic</p>
+                <h1>Building Clean, Practical Websites Through Learning</h1>
+                <p class="hero-subtitle">
+                    This portfolio showcases student projects, concept designs,
+                    and hands on practice as I grow toward real world development work.
+                </p>
+                <a href="#projects" class="btn primary">View My Work</a>
+            </div>
+
+            <div class="hero-box">
+                <p>
+                    All projects shown here are <strong>student or practice projects</strong>.
+                    They demonstrate structure, responsiveness, and problem solving skills.
+                    not paid client work.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section fade-in"></section>
+    <div class="container about-grid">
+        <div>
+            <h2>About Me</h2>
+            <p>
+                Hi, I’m Peter a Web Design & Development/Database Analystic student focused on writing clean,
+                understandable code and building layouts that make sense to real users.
+            </p>
+            <p>
+                My experience comes from school assignments, personal practice, and concept projects
+                where I focus on clarity, structure, and mobile first design.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>What I Focus On</h3>
+            <ul>
+                <li>Readable HTML & CSS</li>
+                <li>MySql Implementation</li>
+                <li>Responsive layouts</li>
+                <li>Learning best practices</li>
+                <li>Honest project representation</li>
+            </ul>
+        </div>
+    </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section light">
+        <div class="container">
+            <div class="section-header">
+                <h2>School & Learning Projects</h2>
+                <p>
+                    These projects were completed as part of my coursework and personal
+                    learning. They demonstrate how I structure websites, write clean code,
+                    and apply responsive design principles.
+                </p>
+            </div>
+
+            <div class="project-grid">
+
+
+                <div class="project-card">
+                    <h3>Multi Page Website (Personal Project)</h3>
+                    <p>
+                        This is a personal website am starting to build, it is still in progress.
+                    </p>
+                    <span class="tag">School Project</span>
+                </div>
+                <div class="project-card">
+                    <h3>Visit Nigeria Website (School Project)</h3>
+
+                    <p>
+                        A multi page website created for a web development course. This project
+                        focuses on responsive design, structured content, navigation, and presenting
+                        cultural and travel information clearly.
+                    </p>
+
+                    <a href="https://peterwalter22.github.io/wdd131/visit-nigeria/index.html" target="_blank"
+                        class="project-link">
+                        View Live Project
+                    </a>
+
+                    <span class="tag">School Project</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>JavaScript Practice Project</h3>
+                    <p>
+                        A small project created to practice basic JavaScript concepts such as
+                        DOM manipulation, events, and simple logic and still in progress.
+                    </p>
+                    <span class="tag">Learning Project</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/xojawwgk" method="POST">
+        <!-- Name -->
+        <input type="text" name="name" placeholder="Your Name" required />
+
+        <!-- Email -->
+        <input type="email" name="email" placeholder="Your Email" required />
+
+        <!-- Inquiry Type (THIS IS THE SELECT) -->
+        <select name="inquiry_type" required>
+            <option value="">I am a...</option>
+            <option value="Recruiter">Recruiter</option>
+            <option value="Student">Student</option>
+            <option value="Client">Potential Client</option>
+            <option value="Instructor">Instructor</option>
+        </select>
+
+        <!-- Honeypot (Spam Protection) -->
+        <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" />
+
+        <!-- Message -->
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+        <!-- Email subject -->
+        <input type="hidden" name="_subject" value="New message from Peter's Portfolio" />
+
+        <!-- Submit -->
+        <button type="submit" class="btn primary">
+            Send Message
+        </button>
+
+        <!-- Status message -->
+        <p id="formStatus" class="form-status"></p>
+    </form>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>© <span id="year"></span> Peter · Student Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
