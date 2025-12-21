@@ -18,7 +18,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const hour = new Date().getHours();
 const openStatus = document.getElementById("openStatus");
 openStatus.textContent =
-  hour >= 11 && hour < 20 ? "🟢 Open Now (11am–8pm)" : "🔴 Closed (11am–8pm)";
+  hour >= 11 && hour < 20 ? "🟢 Open Now (11am – 8pm)" : "🔴 Closed (11am – 8pm)";
 
 /* DAILY SPECIAL */
 const specials = [
