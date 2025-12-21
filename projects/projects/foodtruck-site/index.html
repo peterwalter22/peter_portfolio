@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Teton Food Truck</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Teton Food Truck — burgers, tacos, fries. View menu, order demo, and find our location." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <span class="brand-mark">TF</span>
+                <span class="brand-text">Teton Food Truck</span>
+            </div>
+            <nav>
+                <a href="#menu">Menu</a>
+                <a href="#location">Location</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SLIDESHOW -->
+    <section class="hero">
+        <div class="hero-slideshow">
+            <img src="images/hero.png" class="hero-slide active" alt="">
+            <img src="images/classic burger.png" class="hero-slide" alt="">
+            <img src="images/street tacos.png" class="hero-slide" alt="">
+            <img src="images/loaded fries.png" class="hero-slide" alt="">
+        </div>
+
+        <div class="hero-overlay">
+            <div class="container">
+                <h1>Fresh Food, Served from Our Truck</h1>
+                <p id="openStatus" class="open-status"></p>
+                <p id="dailySpecial" class="daily-special"></p>
+                <a href="#menu" class="btn primary">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+        <div class="container">
+            <h2>Menu</h2>
+            <div id="menuAccordion"></div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="location" class="section alt">
+        <div class="container split">
+            <div>
+                <h2>Find the Truck</h2>
+                <a class="btn primary" href="https://www.google.com/maps?q=6130+S+3rd+St+Tetonia+ID" target="_blank"
+                    onclick="trackEvent('map_opened')">
+                    Open in Google Maps
+                </a>
+            </div>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.102308206217!2d-111.16455342336353!3d43.81223724212954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5353bc0ba4a55555%3A0xdeb555085592acf8!2s6130%20S%203rd%20St%2C%20Tetonia%2C%20ID%2083452!5e0!3m2!1sen!2sus!4v1766315185828"
+                width="100%" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+        </div>
+    </section>
+
+    <!-- ORDER MODAL -->
+    <div id="orderModal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modalItemName"></h3>
+
+            <form id="orderForm">
+                <label>
+                    Quantity
+                    <input type="number" min="1" value="1" required>
+                </label>
+
+                <button class="btn primary">Submit Demo Order</button>
+                <button type="button" class="btn ghost" onclick="closeModal()">Cancel</button>
+
+                <p class="muted">Demo only. No real orders.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- IMAGE GALLERY -->
+    <div id="galleryModal" class="modal hidden">
+        <div class="modal-content">
+            <img id="galleryImage" src="" alt="">
+            <button class="btn ghost" onclick="closeGallery()">Close</button>
+        </div>
+    </div>
+
+    <section id="analyticsPanel" class="section hidden">
+        <div class="container">
+            <h2>Analytics (Demo)</h2>
+            <pre id="analyticsOutput"></pre>
+            <button class="btn ghost" onclick="clearAnalytics()">Clear Data</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © <span id="year"></span> Teton Food Truck
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
