@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<!-- https://peterwalter22.github.io/peter_portfolio/projects/projects/foodtruck-site/index.html -->
+
 <head>
     <meta charset="UTF-8" />
     <title>Teton Food Truck</title>
@@ -9,6 +9,7 @@
         content="Teton Food Truck — burgers, tacos, fries. View menu, order demo, and find our location." />
     <link rel="stylesheet" href="styles.css" />
 </head>
+<!-- https://peterwalter22.github.io/peter_portfolio/projects/projects/foodtruck-site/index.html -->
 
 <body>
 
@@ -53,27 +54,22 @@
             <div class="menu-scroll-container">
                 <div id="menuAccordion"></div>
             </div>
-
         </div>
     </section>
-
 
     <!-- LOCATION -->
     <section id="location" class="section alt">
         <div class="container split">
             <div>
                 <h2>Find the Truck</h2>
-                <a class="btn primary" href="https://www.google.com/maps?q=6130+S+3rd+St+Tetonia+ID" target="_blank"
-                    onclick="trackEvent('map_opened')">
+                <a class="btn primary" href="https://www.google.com/maps?q=6130+S+3rd+St+Tetonia+ID" target="_blank">
                     Open in Google Maps
                 </a>
             </div>
 
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.102308206217!2d-111.16455342336353!3d43.81223724212954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5353bc0ba4a55555%3A0xdeb555085592acf8!2s6130%20S%203rd%20St%2C%20Tetonia%2C%20ID%2083452!5e0!3m2!1sen!2sus!4v1766315185828"
-                width="100%" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            <iframe loading="lazy"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.102308206217!2d-111.16455342336353!3d43.81223724212954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5353bc0ba4a55555%3A0xdeb555085592acf8!2s6130%20S%203rd%20St%2C%20Tetonia%2C%20ID%2083452!5e0!3m2!1sen!2sus">
             </iframe>
-
         </div>
     </section>
 
@@ -81,7 +77,6 @@
     <div id="orderModal" class="modal hidden">
         <div class="modal-content">
             <h3 id="modalItemName"></h3>
-
             <form id="orderForm">
                 <label>
                     Quantity
@@ -99,18 +94,10 @@
     <!-- IMAGE GALLERY -->
     <div id="galleryModal" class="modal hidden">
         <div class="modal-content">
-            <img id="galleryImage" src="" alt="">
+            <img id="galleryImage" alt="">
             <button class="btn ghost" onclick="closeGallery()">Close</button>
         </div>
     </div>
-
-    <section id="analyticsPanel" class="section hidden">
-        <div class="container">
-            <h2>Analytics (Demo)</h2>
-            <pre id="analyticsOutput"></pre>
-            <button class="btn ghost" onclick="clearAnalytics()">Clear Data</button>
-        </div>
-    </section>
 
     <footer class="footer">
         © <span id="year"></span> Teton Food Truck
