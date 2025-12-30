@@ -100,20 +100,23 @@ nav a {
   transform: scaleY(0);
   transform-origin: top;
   opacity: 0;
+  pointer-events: none;
+  /* ADD */
   transition: transform 0.25s ease, opacity 0.2s ease;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   padding: 0 1rem;
-  height: auto;
 }
 
 .menu-items.active {
   transform: scaleY(1);
   opacity: 1;
+  pointer-events: auto;
+  /* ADD */
   padding: 1rem;
 }
-
 
 .menu-item img {
   width: 100%;
