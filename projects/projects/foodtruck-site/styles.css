@@ -1,13 +1,14 @@
 :root {
   --primary: #e63946;
   --dark: #111827;
-  --light: #ffffff;
   --muted: #6b7280;
   --border: #e5e7eb;
   --radius: 16px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -22,7 +23,6 @@ body {
 
 /* HEADER */
 .site-header {
-  background:anticvar(--dark);
   background: #111827;
   color: white;
   position: sticky;
@@ -56,26 +56,30 @@ nav a {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1s ease;
 }
 
-.hero-slide.active { opacity: 1; }
+.hero-slide.active {
+  opacity: 1;
+}
 
 .hero-overlay {
   position: relative;
   z-index: 2;
-  background: rgba(0,0,0,.55);
+  background: rgba(0, 0, 0, .55);
   height: 100%;
   display: flex;
   align-items: center;
   color: white;
 }
 
-.open-status { font-weight: 700; }
-.daily-special {
-  margin-top: .5rem;
+.open-status {
   font-weight: 700;
+}
+
+.daily-special {
   color: #facc15;
+  font-weight: 700;
 }
 
 /* MENU */
@@ -93,29 +97,23 @@ nav a {
 }
 
 .menu-items {
-  max-height: 0;
-  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
   opacity: 0;
-  transition: max-height .4s ease, opacity .3s ease;
+  transition: transform 0.25s ease, opacity 0.2s ease;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   padding: 0 1rem;
+  height: auto;
 }
 
 .menu-items.active {
-  max-height: 1200px;
+  transform: scaleY(1);
   opacity: 1;
   padding: 1rem;
 }
 
-.menu-item {
-  background: white;
-  border-radius: var(--radius);
-  padding: 1rem;
-  text-align: center;
-  position: relative;
-}
 
 .menu-item img {
   width: 100%;
@@ -125,27 +123,18 @@ nav a {
   cursor: pointer;
 }
 
-.popular-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: var(--primary);
-  color: white;
-  font-size: .75rem;
-  padding: .25rem .5rem;
-  border-radius: 999px;
-}
-
 /* MODALS */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.6);
+  background: rgba(0, 0, 0, .6);
   display: grid;
   place-items: center;
 }
 
-.modal.hidden { display: none; }
+.modal.hidden {
+  display: none;
+}
 
 .modal-content {
   background: white;
@@ -153,19 +142,6 @@ nav a {
   border-radius: var(--radius);
   max-width: 420px;
   width: 100%;
-}
-.hidden {
-  display: none;
-}
-
-#analyticsOutput {
-  background: #111827;
-  color: #22c55e;
-  padding: 1rem;
-  border-radius: 12px;
-  max-height: 300px;
-  overflow: auto;
-  font-size: 0.85rem;
 }
 
 /* FOOTER */
@@ -176,30 +152,16 @@ nav a {
   color: white;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .hero { height: 65vh; }
-  .btn { width: 100%; margin-top: .5rem; }
-}
-
-/* ===== MOBILE MENU SCROLL FIX ===== */
+/* MOBILE MENU SCROLL FIX */
 @media (max-width: 768px) {
-
   .menu-scroll-container {
-    max-height: 70vh;          /* menu takes most of screen */
-    overflow-y: auto;          /* scroll INSIDE menu */
+    max-height: 70vh;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    border-radius: 12px;
+    overscroll-behavior: contain;
   }
 
-  /* Prevent page scroll when menu is active */
   body.menu-open {
     overflow: hidden;
-  }
-
-  /* Make expanded menu items scrollable */
-  .menu-items.active {
-    max-height: 60vh;
-    overflow-y: auto;
   }
 }
